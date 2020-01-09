@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.idukelu</groupId>
+  <artifactId>generic</artifactId>
+  <version>2.2.2.RELEASE</version>
+  <packaging>pom</packaging>
+  <name>generic</name>
+  <description>Generic Dependencies</description>
+  <url>https://github.com/iDukeLu/generic-dependencies</url>
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <name>Duke Lu</name>
+      <email>idukelu4wk@163.com</email>
+      <url>https://www.idukelu.com</url>
+    </developer>
+  </developers>
+  <distributionManagement>
+    <repository>
+      <id>rdc-releases</id>
+      <url>https://repo.rdc.aliyun.com/repository/118184-release-WMJsKn/</url>
+    </repository>
+    <snapshotRepository>
+      <id>rdc-snapshots</id>
+      <url>https://repo.rdc.aliyun.com/repository/118184-snapshot-4tGk7w/</url>
+    </snapshotRepository>
+  </distributionManagement>
+  <properties>
+    <revision>2.2.2.RELEASE</revision>
+  </properties>
+</project>
