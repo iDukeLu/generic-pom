@@ -8,4 +8,4 @@
 - generic-parent：通用的 Maven Parent 模块
 
 ## 版本说明
-本项目的版本号和 Spring Boot 的 RELEASE 版本号保持一致
+本项目的版本号和 Spring Boot 的 RELEASE 版本号保持一致（由 reversion 属性决定）
