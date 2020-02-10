@@ -1,9 +1,11 @@
 # generic-dependencies
 ## 模块简介
 本模块提供通用的 Maven Bom 文件，目的在于提供良好的依赖管理，减少不必要的依赖冲突。
+
 该 Bom 文件主要源于以下两个 Bom 文件 
 - `spring-boot-dependencies`
 - `spring-cloud-dependencies`
+
 这两个 Bom 文件提供和管理了大量的开源软件版本号，方便了我们引入依赖，也减少了依赖冲突的发生。
 
 ## 版本说明
