@@ -9,3 +9,13 @@
 
 ## 版本说明
 本项目的版本号和 Spring Boot 的 RELEASE 版本号保持一致（由 reversion 属性决定）
+
+## 升级说明
+1. 修改 <revision> 的版本号为对应 Spring Boot 的 RELEASE 版本号
+2. 上传私服和更新代码：
+    ```
+    mvn clean package deploy -Dmaven.test.skip=true
+    git add *
+    git commit -m "feature(all): update version"
+    git push
+    ```
