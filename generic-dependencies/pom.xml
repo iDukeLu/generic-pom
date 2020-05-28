@@ -7,35 +7,15 @@
         <groupId>com.idukelu.generic</groupId>
         <artifactId>generic-pom</artifactId>
         <version>${revision}</version>
+        <relativePath>../</relativePath>
     </parent>
 
     <artifactId>generic-dependencies</artifactId>
-    <version>${revision}</version>
     <packaging>pom</packaging>
 
     <name>generic-dependencies</name>
     <description>Generic Dependencies</description>
     <url>https://github.com/iDukeLu/generic-dependencies</url>
-
-    <licenses>
-        <license>
-            <name>Apache License, Version 2.0</name>
-            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
-        </license>
-    </licenses>
-
-    <developers>
-        <developer>
-            <name>Duke Lu</name>
-            <email>idukelu4wk@163.com</email>
-            <url>https://www.idukelu.com</url>
-        </developer>
-    </developers>
-
-    <properties>
-        <spring-boot.version>2.2.2.RELEASE</spring-boot.version> <!-- update -->
-        <spring-cloud.version>Hoxton.SR1</spring-cloud.version> <!-- update -->
-    </properties>
 
     <dependencyManagement>
         <dependencies>
@@ -67,5 +47,43 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
+                <version>${flatten-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <!-- Flatten and simplify our own POM for install/deploy -->
+                        <id>flatten</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>flatten</goal>
+                        </goals>
+                        <configuration>
+                            <updatePomFile>true</updatePomFile>
+                            <flattenMode>bom</flattenMode>
+                            <pomElements>
+                                <properties>keep</properties>
+                                <dependencyManagement>resolve</dependencyManagement>
+                                <pluginManagement>keep</pluginManagement>
+                                <repositories>keep</repositories>
+                                <pluginRepositories>keep</pluginRepositories>
+                            </pomElements>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>flatten-clean</id>
+                        <phase>clean</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

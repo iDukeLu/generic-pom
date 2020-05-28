@@ -34,6 +34,9 @@
 
     <properties>
         <revision>2.2.6.RELEASE</revision>
+        <spring-boot.version>2.2.2.RELEASE</spring-boot.version> <!-- update -->
+        <spring-cloud.version>Hoxton.SR1</spring-cloud.version> <!-- update -->
+        <flatten-maven-plugin.version>1.1.0</flatten-maven-plugin.version>
     </properties>
 
     <distributionManagement>
@@ -46,30 +49,5 @@
             <url>https://repo.rdc.aliyun.com/repository/118184-snapshot-4tGk7w/</url>
         </snapshotRepository>
     </distributionManagement>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>flatten-maven-plugin</artifactId>
-                <version>1.1.0</version>
-                <configuration>
-                    <flattenMode>bom</flattenMode>
-                    <pomElements>
-                        <pluginRepositories>keep</pluginRepositories>
-                    </pomElements>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>flatten</id>
-                        <phase>process-resources</phase>
-                        <goals>
-                            <goal>flatten</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>
